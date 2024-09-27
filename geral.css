@@ -297,6 +297,31 @@ a.lRodape:hover { color:#fff; -webkit-transition: color 0.2s; -moz-transition: c
 .exemploTitulo { margin-bottom: 15px; font-size: 1.6em; color: var(--fTema2);}
 .exemploDescricao { margin-bottom: 15px; font-size: .8em; font-weight: 400; line-height: 26px; color: var(--fTema3); }
 
+.containerFAQ {margin-bottom: 30px; padding-bottom: 30px;border-bottom: 2px solid var(--fTema4);
+}
+.faqTiulo { margin-bottom: 10px; font-weight: 500; font-size: 1.4em; color: var(--fTema2);}
+.faqDescricao { font-size: 1.1em; font-weight: 300; }
+
+details { background-color: #fff; border: 1px solid #ddd; border-radius: 5px;
+  margin-bottom: 10px;padding: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
+  
+  summary { font-size: 1.2em; font-weight: bold; color: #181818; cursor: pointer; margin-bottom: 5px; transition: 500ms all;  }
+  
+  summary:hover { color: var(--fTema); }
+  
+  summary::marker { font-size: 1.5em; color: #feb47b; }
+  
+  details[open] { border-color: #feb47b; box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);}
+  
+  p { margin: 10px 0 0; padding: 0; color: #555; }
+  
+  /* Transições para uma abertura suave */
+  details > p { transition: max-height 0.3s ease; overflow: hidden; }
+  
+  details:not([open]) > p { max-height: 0; }
+  
+  details[open] > p { max-height: 100px; /* Ajuste conforme necessário */}
+
 .rodapeLogo { margin-bottom: 30px; max-width: 250px;}
 .rodapeBg { background: linear-gradient(to right, #ff7e5f, #feb47b);}
 .rodapeTitulo { margin-bottom: 10px; font-size: 2em; font-weight: 500; color: var(--fTema);}
