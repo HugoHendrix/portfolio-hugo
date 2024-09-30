@@ -1,6 +1,5 @@
 
-
-
+// MENU MOBILE
 
 $(document).ready(function() {
     var mobileMenuToggle = $('.mobile-menu-toggle');
@@ -30,4 +29,20 @@ $(document).ready(function() {
     mobileMenu.click(function(event) {
         event.stopPropagation();
     });
+});
+
+// INSERINDO NÚMERO DINAMICAMENTE
+const whatsappNumero = "+5517996781133";
+const mensagem = "Olá, gostaria de saber mais sobre os seus serviços.";
+const encodedMessage = encodeURIComponent(mensagem);
+
+// Usando template literals (crases) para interpolar variáveis
+const whatsappLink = `https://wa.me/${whatsappNumero}?text=${encodedMessage}`;
+
+// Selecionando os elementos com a classe .whatsappLink
+const links = document.querySelectorAll('.whatsappLink');
+
+// Aplicando o link de WhatsApp a cada um dos elementos
+links.forEach(link => {
+    link.href = whatsappLink;
 });
