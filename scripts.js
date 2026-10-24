@@ -1,48 +1,23 @@
-
 // MENU MOBILE
+const toggle = document.querySelector('.menu-toggle');
 
-$(document).ready(function() {
-    var mobileMenuToggle = $('.mobile-menu-toggle');
-    var mobileMenu = $('.mobile-menu');
-    var fechaMenu = $('.mobile-menu-close');
+function setMenu(open) {
+    document.body.classList.toggle('menu-open', open);
+    toggle.setAttribute('aria-expanded', open);
+}
 
-    mobileMenuToggle.click(function() {
-        var isMenuOpen = mobileMenu.css('right') === '0px';
-        mobileMenu.css('right', isMenuOpen ? '-300px' : '0');
-    });
+toggle.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
-    function fechamenu() {
-        mobileMenu.css('right', '-300px');
-    }
-
-    $(document).on('click', function(event) {
-        var target = $(event.target);
-
-        // Fecha o menu se o clique não estiver dentro do menu ou do botão de alternância
-        if (!target.closest('.mobile-menu, .mobile-menu-toggle').length) {
-            fechamenu();
-        }
-    });
-
-    fechaMenu.click(fechamenu);
-
-    mobileMenu.click(function(event) {
-        event.stopPropagation();
-    });
-});
-
-// INSERINDO NÚMERO DINAMICAMENTE
+// LINK DO WHATSAPP
 const whatsappNumero = "+5517996781133";
 const mensagem = "Olá, gostaria de saber mais sobre os seus serviços.";
-const encodedMessage = encodeURIComponent(mensagem);
+const whatsappLink = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(mensagem)}`;
 
-// Usando template literals (crases) para interpolar variáveis
-const whatsappLink = `https://wa.me/${whatsappNumero}?text=${encodedMessage}`;
-
-// Selecionando os elementos com a classe .whatsappLink
-const links = document.querySelectorAll('.whatsappLink');
-
-// Aplicando o link de WhatsApp a cada um dos elementos
-links.forEach(link => {
+document.querySelectorAll('.whatsappLink').forEach(link => {
     link.href = whatsappLink;
 });
+
+// ANO DO RODAPÉ
+document.getElementById('ano').textContent = new Date().getFullYear();
