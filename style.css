@@ -53,8 +53,7 @@ a {
 }
 
 a:focus-visible,
-button:focus-visible,
-summary:focus-visible {
+button:focus-visible {
     outline: 2px solid var(--blue);
     outline-offset: 2px;
 }
@@ -419,29 +418,6 @@ header[id] {
     color: var(--soft);
 }
 
-/* ---------- FAQ ---------- */
-details {
-    margin-bottom: 8px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--glass-bd);
-    border-radius: 10px;
-}
-
-details[open] {
-    border-color: var(--blue);
-}
-
-summary {
-    padding: 0.8rem 1rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-details p {
-    padding: 0 1rem 1rem;
-    color: var(--soft);
-}
-
 /* ---------- CTA ---------- */
 .cta {
     text-align: center;
@@ -583,17 +559,7 @@ details p {
     border: 0;
 }
 
-/* ---------- FAQ em grupos e avaliações ---------- */
-.faq-group {
-    margin: 1.25rem 0 0.6rem;
-    font-size: 1rem;
-    color: var(--blue-soft);
-}
-
-.faq-group:first-of-type {
-    margin-top: 0;
-}
-
+/* ---------- Avaliações ---------- */
 .review {
     margin: 0;
 }
